@@ -2,7 +2,7 @@ import math
 
 class Point:
 
-    def __init__(self, x, y,FL):
+    def __init__(self, x, y,FL=0):
         """
         x:  (int)  the x-coordinate en metres
         y:  (int)  the y-coordinate en metres
