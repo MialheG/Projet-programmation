@@ -28,7 +28,7 @@ pt_j = Geometrie.Point(180, 145, 0)
 pt_secteur = [pt_a, pt_b, pt_c, pt_d, pt_e, pt_f, pt_g, pt_h, pt_i, pt_j]
 
 class FenetreSecteur(QWidget):
-    def __init__(self):
+    def __init__(self, pt_secteur :list[Geometrie.Point], list_balise :list[Balise.Balise], list_avion :list[Flight]):
         super().__init__()
         self.setWindowTitle("Secteur de controle - ZONE 1")
         self.setStyleSheet("background-color: #000000;")
@@ -38,7 +38,8 @@ class FenetreSecteur(QWidget):
         
         self.z_min = 29000
         self.z_max = 41000
-
+        self.balises = list_balise
+        #self.avions = list_avion
         # Avions de tests (IMMOBILES).
         self.avions = [Visualisation(Flight("AFR123",Geometrie.Point(300, 150, 290),290,125)),
                         Visualisation(Flight("DLH456",Geometrie.Point(420, 200, 330),360,70)),
