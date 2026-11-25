@@ -17,21 +17,18 @@ class Balise:
     def __repr__(self):
         return "Balise "+self.nom+" en "+str(self.point)
 
-    def surcontour(self,contour):
-        
-        pass
+    def in_sector_balise(self,sector:Fenetre_Secteur):   #savoir si une balise est dans le secteur
+        pixmap = sector.grab(QRect(self.point.x, self.point.y, 1, 1))
+        clr_fond = pixmap.toImage().pixelColor(0, 0)
+        print(clr_fond.name())
+        if clr_fond.name()==Fenetre_Secteur.secteur_clr:  #.name met au format #111111
+            return True 
+        else :
+            return False    
 
+bal=Balise(Geometrie.Point(215,88,0))
+print(bal)
 
-# bal=Balise((200,150))
-# print(bal)
-
-
-# balise_contour=[]
-# for point in Fenetre_Secteur.pt_secteur:
-#     balise_contour.append(Balise(point))
-#     print(Balise(point))
-
-# balise_int=[]
 
 
 
